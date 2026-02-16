@@ -3,28 +3,18 @@ import javax.swing.JOptionPane;
 public class Ejercicio {
 
     public static void main(String[] args) {
-        // 1. Crear un arreglo de notas (ingresado por el usuario)
         int cantidadNotas = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el número de notas"));
         double[] notas = new double[cantidadNotas];
 
-        // 2. Inicializar el arreglo con las notas ingresadas por el usuario
         for (int i = 0; i < cantidadNotas; i++) {
             notas[i] = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la nota #" + (i + 1)));
         }
 
-        // 3. Calcular la nota definitiva
         double notaDefinitiva = calcularNotaDefinitiva(notas);
-
-        // 4. Obtener la nota mayor
         double notaMayor = obtenerNotaMayor(notas);
-
-        // 5. Obtener la nota menor
         double notaMenor = obtenerNotaMenor(notas);
-
-        // 6. Ordenar el arreglo con burbuja
         ordenarBurbuja(notas);
-
-        // 7. Mostrar el resumen de notas
+        
         StringBuilder resumen = new StringBuilder("Resumen de notas:\n");
         resumen.append("Notas ordenadas: ");
         for (double nota : notas) {
@@ -34,7 +24,7 @@ public class Ejercicio {
         resumen.append("\nNota mayor: ").append(notaMayor);
         resumen.append("\nNota menor: ").append(notaMenor);
 
-        // 8. Funcionalidad distinta: contar cuántas notas son mayores o iguales a 3.0 
+        // Funcionalidad distinta: contar cuántas notas son mayores o iguales a 3.0 
         int aprobadas = contarAprobadas(notas);
         resumen.append("\nCantidad de notas aprobadas: ").append(aprobadas);
 
